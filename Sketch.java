@@ -9,16 +9,13 @@ public class Sketch extends PApplet {
   public void settings() {
 	// put your size call here
     size(400, 400);
+    
   }
 
-  /** 
-   * Called once at the beginning of execution.  Add initial set up
-   * values here i.e background, stroke, fill etc.
-   */
   public void setup() {
+
     background(51, 204, 255);
-    
-    
+
     // yellow sun
     fill(255, 255, 0);
     float sunX = random(0, height);
@@ -54,15 +51,16 @@ public class Sketch extends PApplet {
       ellipse(sunX, sunY, sunDiameter, sunDiameter);
       fill(46, 136, 182);
       rect(0, 320, 400, 430);
-      
     }
+    // current date and time
+    fill(0, 0, 0);
+    textSize(16);
+    text(day() + "/" + month() + "/" + year() + "  " + (hour() + ":" + minute() + ":" + second()), 20, 30);
+
   }
 
-  /**
-   * Called repeatedly, anything drawn to the screen goes here
-   */
   public void draw() {
-	  
+    
     // tan rectangle  
     fill(210, 180, 140);
     rect(95, 150, 210, 180);
